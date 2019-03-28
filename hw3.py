@@ -1,6 +1,6 @@
 from bcpu import *
 
-p2 = 0
+p2 = 4
 p3 = 3
 p4 = 4
 if p2==0:
@@ -11,16 +11,17 @@ else:
     p4 = 40
 p5 = 55
 
-asmfile = """
-Set(r2, 2)
+ifelse = """
+Set(r2, 5)
 Set(r3, 3)
 Set(r4, 4)
+Set(r11, 10)
+Sub(r12, r11, r2) #if r2 >= 10, r12 will be positive(Rb==0)
 Addi(r10, pc, ?endif)
-Movex(pc, r10, r2)
+Movep(pc, r10, r12) #if r12 is negative or 0, go to else
     Set(r3, 33)
     Set(r4, 44)
-    Addi(r10, pc, ?endelse)
-    Move(pc, r10)
+    Addi(pc, pc, ?endelse)
 #>endif
     Set(r3, 30)
     Set(r4, 40)
