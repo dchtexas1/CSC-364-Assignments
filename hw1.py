@@ -5,8 +5,8 @@ from bcpu import *
 
 Set(r4, 444%256)
 Seth(r4, 444//256)
-Set(r5, 55555%256)
-Seth(r5, 55555//256)
+Set(r5, 5555%256)
+Seth(r5, 5555//256)
 Add(r4, r4, r5)
 Set(r5, 2111%256)
 Seth(r5, 2111//256)
